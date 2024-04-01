@@ -6,6 +6,12 @@ from pdf2image import convert_from_path
 import pytesseract
 import fitz  # PyMuPDF
 
+# Ruta al archivo PDF de entrada
+input_pdf_path = 'ruta/a/tu/pdf_con_imagenes.pdf'
+# Ruta al archivo PDF de salida
+output_pdf_path = 'ruta/a/tu/pdf_salida.pdf'
+
+
 def ocr_pdf_and_maintain_format(input_pdf_path, output_pdf_path):
     # Abrir el PDF original
     doc = fitz.open(input_pdf_path)
@@ -31,10 +37,5 @@ def ocr_pdf_and_maintain_format(input_pdf_path, output_pdf_path):
     
     # Guardar el nuevo PDF
     doc.save(output_pdf_path)
-
-# Ruta al archivo PDF de entrada
-input_pdf_path = 'ruta/a/tu/pdf_con_imagenes.pdf'
-# Ruta al archivo PDF de salida
-output_pdf_path = 'ruta/a/tu/pdf_salida.pdf'
 
 ocr_pdf_and_maintain_format(input_pdf_path, output_pdf_path)
